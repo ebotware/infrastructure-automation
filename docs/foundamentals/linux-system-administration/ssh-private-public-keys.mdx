@@ -43,6 +43,16 @@ Le due chiavi sono legate matematicamente.
 * Facili da revocare  
 * Permettono l'automazione (CI/CD, script, ecc.)
 
+### Esempio pratico
+
+Linux:
+```
+ssh-keygen -t ed25519 -C "un commento non usato programmaticamente"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+```
+
 ### Tunneling SSH (Port Forwarding)
 Il **tunneling SSH** ti permette di instradare altro traffico di rete *attraverso* una connessione SSH criptata.  
 Pensa a un **tubo sicuro** all'interno di SSH.

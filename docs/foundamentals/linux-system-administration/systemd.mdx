@@ -1,0 +1,47 @@
+---
+sidebar_position: 3
+---
+
+# Systemd, systemctl e gestione servizi
+Comprendere cos'è systemd e systemctl
+
+### systemd
+
+* **What it is:** The *init system* and service manager itself.
+* **What it does:**
+  * Boots the system (PID 1)
+  * Starts/stops services
+  * Manages dependencies, sockets, timers, mounts, etc.
+
+* **Think of it as:** the **engine** running your Linux system.
+
+### systemctl
+
+* **What it is:** The **command-line tool** you use to talk to systemd.
+* **What it does:** Sends commands *to* systemd.
+* **Think of it as:** the **remote control** for the engine.
+
+### Common examples
+
+```bash
+systemctl start nginx
+systemctl stop nginx
+systemctl status nginx
+systemctl enable nginx
+```
+
+All of those commands are **systemctl** telling **systemd** what to do.
+
+### Analogy
+
+* **systemd** → the manager running the restaurant
+* **systemctl** → the walkie-talkie you use to give orders
+
+### Quick comparison table
+
+| Aspect      | systemd                   | systemctl               |
+| ----------- | ------------------------- | ----------------------- |
+| Type        | Background daemon (PID 1) | CLI command             |
+| Role        | Manages the system        | Controls systemd        |
+| Runs always | Yes                       | Only when you invoke it |
+| You edit it | Rarely                    | Constantly              |
